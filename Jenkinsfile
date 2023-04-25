@@ -2,9 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Stage 1') {
+        stage('Generating Configuration') {
             steps {
-                echo "Stage1"
+		sh 'sudo python3 /home/netman/Download/lab11-createTemp.py'
+                sh 'sudo ansible-playbook /etc/ansible/site.yaml'
+		sh 'sudo python3 /home/netman/Download/lab11-ospfConfig.py'
+		sh 'sudo python3 /home/netman/Download/lab11-confBGP.py'
 		echo "Triggered"
             }
         }
