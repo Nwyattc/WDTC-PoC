@@ -14,7 +14,6 @@ pipeline {
         stage('Stage 2') {
             steps {
                 echo "Stage2"
-                 echo "Triggered2"
             }
         }
  	stage('Stage 3') {
