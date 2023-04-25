@@ -27,6 +27,6 @@ def cpu_graph():
     plt.ylabel('Percentage')
     plt.legend()
     plt.savefig("Utilization.jpg")
-    print("CPU Utilization graph caqptured.")
+    print("CPU Utilization graph captured.")
 
 cpu_graph()
