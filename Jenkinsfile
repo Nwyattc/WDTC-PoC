@@ -5,6 +5,7 @@ pipeline {
         stage('Stage 1') {
             steps {
                 echo "Stage1"
+		echo "Triggered"
             }
         }
         stage('Stage 2') {
