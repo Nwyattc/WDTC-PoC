@@ -2,26 +2,25 @@ pipeline {
     agent any
 
     stages {
-        stage('Stage 1') {
+        stage('Generate Configuration using Jinja2') {
             steps {
 		sh 'sudo python3 lab11-createTemp.py'
                 sh 'sudo ansible-playbook /etc/ansible/site.yaml'
-		echo "Triggered"
             }
         }
-        stage('Stage 2') {
+        stage('Configure OSPF') {
             steps {
                 echo "Stage2"
 		sh 'sudo python3 lab11-ospfConfig.py'
             }
         }
- 	stage('Stage 3') {
+ 	stage('Configuring BGP') {
             steps {
                 echo "Stage 3"
 		sh 'sudo python3 lab11-confBGP.py'
             }
         }
-        stage('Stage 4') {
+        stage('Generate CPU utilization graph using SNMP') {
             steps {
                 echo "Stage 4"
 		sh 'sudo python3 -m pip install easysnmp'
