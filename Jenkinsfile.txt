@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Generate Configuration using Jinja2') {
+        stage('Generate Configurations using Jinja2') {
             steps {
 		sh 'sudo python3 lab11-createTemp.py'
                 sh 'sudo ansible-playbook /etc/ansible/site.yaml'
